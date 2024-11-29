@@ -106,7 +106,7 @@ const Room = ({ room, devices }) => (
     <div className="grid grid-cols-3 gap-4">
       {Object.values(devices).flat().map(device => (
         <DeviceControl 
-          key={device.id} 
+          key={device.id}
           device={device}
           onChange={(id, value) => console.log(id, value)}
         />
