@@ -1,5 +1,5 @@
 'use client'
-
+import { DeviceControlProps, RoomProps } from './types';
 import React, { useState } from 'react';
 import { 
   Home, Tv, Sun, Moon, Shield, Thermometer,
@@ -56,7 +56,7 @@ const getRoomDevices = (roomId) => ({
   ]
 });
 
-const DeviceControl = ({ device, onChange }) => {
+const DeviceControl = ({ device, onChange }: DeviceControlProps) => {
   const getIcon = () => {
     switch(device.type) {
       case 'dimmer': return Sun;
@@ -97,7 +97,7 @@ const DeviceControl = ({ device, onChange }) => {
   );
 };
 
-const Room = ({ room, devices }) => (
+const Room = ({ room, devices }: RoomProps) => (
   <div className="space-y-6">
     <div className="flex items-center gap-4 mb-8">
       <room.icon className="w-8 h-8 text-blue-600" />
